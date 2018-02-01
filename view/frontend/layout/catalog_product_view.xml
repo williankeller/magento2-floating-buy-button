@@ -1,0 +1,8 @@
+<?xml version="1.0" ?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="content">
+            <block as="floatingbuybutton" class="ButSource\FloatingBuyButton\Block\FloatingBuyButton" name="floating.buy.button" template="ButSource_FloatingBuyButton::content.phtml"/>
+        </referenceBlock>
+    </body>
+</page>

@@ -1,0 +1,21 @@
+{
+    "name": "butsource/module-floatingbuybutton",
+    "description": "Custom Floating Buy Button.",
+    "license": "GPL-3.0",
+    "authors": [
+        {
+            "email": "magento@butsource.com.br",
+            "name": "Willian Keller"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "ButSource\\FloatingBuyButton\\": ""
+        },
+        "files": [
+            "registration.php"
+        ]
+    }
+}
