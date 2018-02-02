@@ -2,7 +2,17 @@
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
         <referenceBlock name="content">
-            <block as="floatingbuybutton" class="ButSource\FloatingBuyButton\Block\FloatingBuyButton" name="floating.buy.button" template="ButSource_FloatingBuyButton::content.phtml"/>
+            <block class="ButSource\FloatingBuyButton\Block\FloatingBuyButton" name="floating.buy.button" template="ButSource_FloatingBuyButton::content.phtml">
+                <arguments>
+                    <argument name="jsLayout" xsi:type="array">
+                        <item name="components" xsi:type="array">
+                            <item name="floating-buy-button" xsi:type="array">
+                                <item name="component" xsi:type="string">ButSource_FloatingBuyButton/js/view/floating-buy-button</item>
+                            </item>
+                        </item>
+                    </argument>
+                </arguments>
+            </block>
         </referenceBlock>
     </body>
 </page>
