@@ -15,27 +15,35 @@
 // @codingStandardsIgnoreFile
 ?>
 <?php $_product = $block->getProduct(); ?>
+
 <?php if ($_product->isSaleable()): ?>
 <div id="floating-buy-button" data-bind="scope:'floating-buy-button'">
-    <div class="product-name">
-        <h2 class="page-title">
-            <span itemprop="name"><?= $block->escapeHtml($_product->getName()); ?></span>
-        </h2>
+    <div class="buy-button-toggle">
+        <span><?= /* @escapeNotVerified */ __('Add to Cart') ?></span>
+        <span class="cs-font clever-icon-down"></span>
     </div>
-    <div class="product-price">
-        <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-            <div class="price-value"><?= $block->getProductPrice($_product) ?></div>
-            <meta itemprop="priceCurrency" content="<?= $block->getCurrency(); ?>">
+    <div class="content-container page-main">
+        <div class="buy-details">
+            <div class="product-name">
+                <h2 class="page-title">
+                    <span itemprop="name"><?= $block->escapeHtml($_product->getName()); ?></span>
+                </h2>
+            </div>
+            <div class="product-price">
+                <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                    <div class="price-value"><?= $block->getProductPrice($_product) ?></div>
+                    <meta itemprop="priceCurrency" content="<?= $block->getCurrency(); ?>">
+                </div>
+            </div>
         </div>
-    </div>
-    <div class="buy-button">
-        <div class="actions">
-            <button type="button"
-                    title="<?= /* @escapeNotVerified */ __('Add to Cart') ?>"
-                    class="action primary trigger-tocart"
-                    data-bind="click: triggerToCart">
-                <span><?= /* @escapeNotVerified */ __('Add to Cart') ?></span>
-            </button>
+        <div class="buy-button">
+            <div class="actions">
+                <button type="button"
+                        title="<?= /* @escapeNotVerified */ __('Add to Cart') ?>"
+                        class="action primary trigger-tocart">
+                    <span><?= /* @escapeNotVerified */ __('Add to Cart') ?></span>
+                </button>
+            </div>
         </div>
     </div>
 </div>
