@@ -1,50 +1,51 @@
 <?php
 /**
  * Custom Floating Buy Button.
- * Copyright (C) 2017 butSource (http://butsource.com.br)
- * 
- * This file is part of ButSource/FloatingBuyButton.
- * 
- * ButSource/FloatingBuyButton is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- * 
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
- * GNU General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
+ * Copyright (C) 2018 butSource (http://butsource.com.br)
+ *
+ * This file included in ButSource/FloatingBuyButton is licensed under OSL 3.0
+ *
+ * http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ * Please see LICENSE.txt for the full text of the OSL 3.0 license
  */
 
 namespace ButSource\FloatingBuyButton\Block;
 
-class FloatingBuyButton
+use Magento\Catalog\Model\Product;
+
+class FloatingBuyButton extends \Magento\Catalog\Block\Product\AbstractProduct implements \Magento\Widget\Block\BlockInterface
 {
+    /**
+     * @var Product
+     */
+    protected $_product = null;
 
     /**
-     * @return string
+     * Core registry
+     *
+     * @var \Magento\Framework\Registry
      */
-    public function button()
-    {
-        return '';
+    protected $_coreRegistry = null;
+
+    /**
+     * @param \Magento\Framework\View\Element\Template\Context $context
+     * @param \Magento\Framework\Registry $registry
+     * @param array $data
+     */
+    public function __construct(
+        \Magento\Catalog\Block\Product\Context $context,
+        \Magento\Framework\Registry $registry,
+        array $data = []
+    ) {
+        $this->_coreRegistry = $registry;
+        parent::__construct($context, $data);
     }
 
     /**
      * @return string
      */
-    public function productName()
+    public function getCurrency()
     {
-        return '';
-    }
-
-    /**
-     * @return string
-     */
-    public function productPrice()
-    {
-        return '';
+        return $this->_storeManager->getStore()->getCurrentCurrency()->getCode();
     }
 }
