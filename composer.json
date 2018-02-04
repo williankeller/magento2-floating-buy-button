@@ -1,14 +1,14 @@
 {
-    "name": "butsource/magento2-floating-buy-button",
-    "description": "Custom Floating Buy Button.",
+    "name": "magestat/magento2-floating-buy-button",
+    "description": "Floating Buy Button.",
     "type": "magento2-module",
     "version": "1.0.0",
     "minimum-stability": "dev",
     "authors": [
         {
-            "name": "Willian Keller",
-            "email": "magento@butsource.com.br",
-            "homepage": "http://www.butsource.com.br"
+            "name": "Magestat",
+            "email": "contact@magestat.com",
+            "homepage": "http://www.magestat.com"
         }
     ],
     "license": [
@@ -22,7 +22,7 @@
             "registration.php"
         ],
         "psr-4": {
-            "ButSource\\FloatingBuyButton\\": ""
+            "Magestat\\FloatingBuyButton\\": ""
         }
     }
 }
