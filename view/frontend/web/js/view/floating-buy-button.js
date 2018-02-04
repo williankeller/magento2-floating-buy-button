@@ -1,6 +1,6 @@
 /**
  * Custom Floating Buy Button.
- * Copyright (C) 2018 butSource (http://butsource.com.br)
+ * Copyright (C) 2018 ButSource (http://butsource.com.br)
  *
  * This file included in ButSource/FloatingBuyButton is licensed under OSL 3.0
  *
