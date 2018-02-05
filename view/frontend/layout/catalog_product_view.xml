@@ -11,9 +11,6 @@
  */
 -->
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
-    <head>
-        <css src="Magestat_FloatingBuyButton::css/floating-buy-button.css"/>
-    </head>
     <body>
         <referenceBlock name="content">
             <block class="Magestat\FloatingBuyButton\Block\FloatingBuyButton" name="floating.buy.button" template="Magestat_FloatingBuyButton::content.phtml">
