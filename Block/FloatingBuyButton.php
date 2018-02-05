@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Floating Buy Button.
  * Copyright (C) 2018 Magestat (http://magestat.com)
@@ -11,33 +12,30 @@
 
 namespace Magestat\FloatingBuyButton\Block;
 
-use Magento\Catalog\Model\Product;
-
 class FloatingBuyButton extends \Magento\Catalog\Block\Product\AbstractProduct implements \Magento\Widget\Block\BlockInterface
 {
+
     /**
      * @var Product
      */
     protected $_product = null;
 
     /**
-     * Core registry
-     *
-     * @var \Magento\Framework\Registry
+     * @var Data
      */
-    protected $_coreRegistry = null;
+    protected $_dataHelper = null;
 
     /**
-     * @param \Magento\Framework\View\Element\Template\Context $context
-     * @param \Magento\Framework\Registry $registry
+     * @param \Magento\Catalog\Block\Product\Context $context
+     * @param \Magestat\FloatingBuyButton\Helper\Data $helper
      * @param array $data
      */
     public function __construct(
         \Magento\Catalog\Block\Product\Context $context,
-        \Magento\Framework\Registry $registry,
+        \Magestat\FloatingBuyButton\Helper\Data $helper,
         array $data = []
     ) {
-        $this->_coreRegistry = $registry;
+        $this->_dataHelper = $helper;
         parent::__construct($context, $data);
     }
 
@@ -48,4 +46,13 @@ class FloatingBuyButton extends \Magento\Catalog\Block\Product\AbstractProduct i
     {
         return $this->_storeManager->getStore()->getCurrentCurrency()->getCode();
     }
+
+    /**
+     * @return string
+     */
+    public function getPosition()
+    {
+        return $this->_dataHelper->getPositions();
+    }
+
 }

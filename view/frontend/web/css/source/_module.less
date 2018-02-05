@@ -8,35 +8,22 @@
  * Please see LICENSE.txt for the full text of the OSL 3.0 license
  */
 
+@container-height: 82px;
+@container-border: #f4f4f4;
+@button-toggle-size: 40px;
+
 #floating-buy-button {
     background: #fff;
+    box-sizing: border-box;
     position: fixed;
-    bottom: 0;
-    left: 0;
+    height: @container-height;
     width: 100%;
     z-index: 99;
 
-    border-top: 1px solid #f4f4f4;
-    -moz-transform: translateY(400px);
-    -webkit-transform: translateY(400px);
-    -o-transform: translateY(400px);
-    transform: translateY(400px);
-
-    -moz-transition: transform .5s ease;
-    -webkit-transition: transform .5s ease;
-    -o-transition: transform .5s ease;
-    transition: transform .5s ease;
-
-    -moz-backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-
-    &.active {
-        -moz-transform: translateY(0);
-        -webkit-transform: translateY(0);
-        -o-transform: translateY(0);
-        transform: translateY(0);
-    }
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    -o-transition: all .5s ease;
+    transition: all .5s ease;
 
     .content-container {
         margin-bottom: 20px;
@@ -48,10 +35,8 @@
         color: #fff;
         cursor: pointer;
         font-size: 12px;
-        height: 40px;
-        left: 0;
+        height: @button-toggle-size;
         line-height: 40px;
-        top: -40px;
         padding: 0 10px;
         position: absolute;
         text-align: center;
@@ -98,6 +83,39 @@
         .trigger-tocart {
             margin: 0;
             padding: 10px 20px;
+        }
+    }
+
+    &.position-top {
+        left: 0;
+        top: -(@container-height + @button-toggle-size);
+        border-bottom: 1px solid @container-border;
+        &.active {
+            top: 0;
+            &.hidden {
+                top: -@container-height;
+            }
+        }
+        .buy-button-toggle {
+            left: 0;
+            bottom: -@button-toggle-size;
+        }
+    }
+
+    &.position-bottom {
+        left: 0;
+        bottom: -(@container-height + @button-toggle-size);
+        border-top: 1px solid @container-border;
+        &.active {
+            bottom: 0;
+            &.hidden {
+                bottom: -@container-height;
+            }
+        }
+
+        .buy-button-toggle {
+            left: 0;
+            top: -@button-toggle-size;
         }
     }
 }
