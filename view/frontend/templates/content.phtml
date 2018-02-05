@@ -12,7 +12,6 @@
 /**
  * @var $block \Magestat\FloatingBuyButton\Block\FloatingBuyButton
  */
-// @codingStandardsIgnoreFile
 ?>
 <?php $_product = $block->getProduct(); ?>
 
@@ -20,19 +19,18 @@
 <div id="floating-buy-button" data-bind="scope:'floating-buy-button'">
     <div class="buy-button-toggle">
         <span><?= /* @escapeNotVerified */ __('Add to Cart') ?></span>
-        <span class="cs-font clever-icon-down"></span>
     </div>
     <div class="content-container page-main">
         <div class="buy-details">
             <div class="product-name">
-                <h2 class="page-title">
-                    <span itemprop="name"><?= $block->escapeHtml($_product->getName()); ?></span>
+                <h2 class="page-title" title="<?= $block->escapeHtml($_product->getName()) ?>">
+                    <span itemprop="name"><?= $block->escapeHtml($_product->getName()) ?></span>
                 </h2>
             </div>
             <div class="product-price">
                 <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
                     <div class="price-value"><?= $block->getProductPrice($_product) ?></div>
-                    <meta itemprop="priceCurrency" content="<?= $block->getCurrency(); ?>">
+                    <meta itemprop="priceCurrency" content="<?= $block->getCurrency() ?>">
                 </div>
             </div>
         </div>
@@ -47,6 +45,7 @@
         </div>
     </div>
 </div>
+
 <script type="text/x-magento-init">
 {
     "#floating-buy-button": {
