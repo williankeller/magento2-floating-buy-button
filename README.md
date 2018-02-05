@@ -7,7 +7,7 @@ reviews, the button follow your customers along each product page. Bringing the
 product name, price and of course, the buy button.
 Get your customer attention the most important action in your online store, 
 the purchase. Easy and quick to improve your conversion rate without cost and 
-with the butSource quality!
+with the Magestat quality!
 
 By default, this extension retrieves your current theme color patterns.
 
