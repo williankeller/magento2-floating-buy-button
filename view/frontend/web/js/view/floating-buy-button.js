@@ -121,7 +121,7 @@ define([
 
             setTimeout(function () {
                 self.stickyDisplayContainer();
-            }, 1000);
+            }, 500);
 
             return this;
         },
