@@ -23,7 +23,7 @@ composer require magestat/module-floating-buy-button:dev-master
 
 Run the following series of command (from root of your Magento2 Installation):
 ```
-mkdir -p app/code/Magestat && git clone git@github.com:magestat/magento2-floating-buy-button.git && app/code/Magestat/FloatingBuyButton
+mkdir -p app/code/Magestat && git clone git@github.com:magestat/magento2-floating-buy-button.git app/code/Magestat/FloatingBuyButton
 ```
 
 **Enabling module**
