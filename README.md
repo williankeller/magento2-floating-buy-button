@@ -35,6 +35,9 @@ php bin/magento module:enable Magestat_FloatingBuyButton --clear-static-content
 php bin/magento setup:upgrade
 ```
 
+Go to *Stores* > *Configuration* > *Magestat* > *General*:
+Enable the module and choose the "Position to be Displayed"
+
 By default, this extension retrieves your current theme color patterns.
 
 Multi-language ready!
