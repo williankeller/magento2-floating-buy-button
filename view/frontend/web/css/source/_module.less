@@ -8,7 +8,9 @@
  * Please see LICENSE.txt for the full text of the OSL 3.0 license
  */
 
-@container-height: 82px;
+
+@container-full-size: 82px;
+@container-side-size: 400px;
 @container-border: #f4f4f4;
 @button-toggle-size: 40px;
 
@@ -16,7 +18,7 @@
     background: #fff;
     box-sizing: border-box;
     position: fixed;
-    height: @container-height;
+    height: @container-full-size;
     width: 100%;
     z-index: 99;
 
@@ -37,10 +39,10 @@
         font-size: 12px;
         height: @button-toggle-size;
         line-height: 40px;
-        padding: 0 10px;
         position: absolute;
         text-align: center;
         text-transform: uppercase;
+        width: 100px;
     }
 
     .buy-details {
@@ -78,6 +80,7 @@
         display: inline-block;
         float: right;
         margin: 0;
+        outline: none;
         text-align: right;
         width: 20%;
         .trigger-tocart {
@@ -86,14 +89,18 @@
         }
     }
 
-    &.position-top {
+    &.position-top,
+    &.position-bottom {
         left: 0;
-        top: -(@container-height + @button-toggle-size);
+        top: -(@container-full-size + @button-toggle-size);
+    }
+
+    &.position-top {
         border-bottom: 1px solid @container-border;
         &.active {
             top: 0;
             &.hidden {
-                top: -@container-height;
+                top: -@container-full-size;
             }
         }
         .buy-button-toggle {
@@ -101,21 +108,76 @@
             bottom: -@button-toggle-size;
         }
     }
-
     &.position-bottom {
-        left: 0;
-        bottom: -(@container-height + @button-toggle-size);
         border-top: 1px solid @container-border;
         &.active {
             bottom: 0;
             &.hidden {
-                bottom: -@container-height;
+                bottom: -@container-full-size;
             }
         }
-
         .buy-button-toggle {
             left: 0;
             top: -@button-toggle-size;
+        }
+    }
+
+    &.position-left,
+    &.position-right {
+        border: 1px solid @container-border;
+        margin-top: -68px;
+        height: 135px;
+        top: 50%;
+        width: @container-side-size;
+        .content-container {
+            margin-bottom: 10px;
+            margin-top: 0;
+            padding: 5px 10px;
+        }
+        .buy-button-toggle {
+            top: 29px;
+        }
+        .buy-details,
+        .buy-button {
+            display: block;
+            margin-top: 8px;
+            text-align: center;
+            width: 100%;
+        }
+        .product-name,
+        .product-price {
+            float: none;
+            max-width: 100%;
+            margin: 0;
+        }
+    }
+
+    &.position-left {
+        border-right: 0;
+        right: -(@container-side-size + @button-toggle-size);
+        &.active {
+            right: 0;
+            &.hidden {
+                right: -@container-side-size;
+            }
+        }
+        .buy-button-toggle {
+            left: -70px;
+            transform: rotate(-90deg);
+        }
+    }
+    &.position-right {
+        border-left: 0;
+        left: -(@container-side-size + @button-toggle-size);
+        &.active {
+            left: 0;
+            &.hidden {
+                left: -@container-side-size;
+            }
+        }
+        .buy-button-toggle {
+            right: -70px;
+            transform: rotate(90deg);
         }
     }
 }
