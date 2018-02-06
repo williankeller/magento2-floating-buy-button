@@ -16,7 +16,7 @@
 <?php $_product = $block->getProduct(); ?>
 
 <?php if ($_product->isSaleable()): ?>
-<div id="floating-buy-button" data-bind="scope:'floating-buy-button'">
+<div id="floating-buy-button" class="<?= $block->getPosition() ?>" data-bind="scope:'floating-buy-button'">
     <div class="buy-button-toggle">
         <span><?= /* @escapeNotVerified */ __('Add to Cart') ?></span>
     </div>

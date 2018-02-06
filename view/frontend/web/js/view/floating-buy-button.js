@@ -15,8 +15,16 @@ define([
 
     return Component.extend({
         defaults: {
+            // Add to Cart form ID.
             toCartForm: '#product_addtocart_form',
+
+            // Add to Cart button ID.
             toCartButton: '#product-addtocart-button',
+
+            // Magento button container ID.
+            buttonContainer: '.product-info-main .box-tocart',
+
+            // Floating Buy Button.
             floatButton: '#floating-buy-button'
         },
 
@@ -64,10 +72,9 @@ define([
 
             // Detect click action under buy button toggle tab.
             $(self.floatButton).on('click', '.buy-button-toggle', function () {
-                $(this).toggleClass('active')
-                    .parent()
-                    .find('.content-container')
-                    .slideToggle(300);
+                $(this).toggleClass('hidden')
+                    //Add class hidden to main container.
+                    .parent().toggleClass('hidden');
             });
 
             return this;
@@ -85,6 +92,7 @@ define([
             $(self.toCartForm).on('DOMSubtreeModified', self.toCartButton, function () {
                 var button = $(this).html();
 
+                // Update button text.
                 $(self.floatButton).find('.trigger-tocart').html(button);
             });
 
@@ -119,6 +127,7 @@ define([
         displayContainer: function () {
             var self = this;
 
+            // Start conatiner after a while.
             setTimeout(function () {
                 self.stickyDisplayContainer();
             }, 500);
@@ -139,7 +148,7 @@ define([
 
                 // Get scroll size.
                 var scrollTop = $(window).scrollTop(),
-                    container = $('.product-info-main .box-tocart');
+                    container = $(self.buttonContainer);
 
                 // Check if container exist.
                 if (container.length) {
