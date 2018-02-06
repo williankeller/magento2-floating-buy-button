@@ -1,9 +1,8 @@
 {
-    "name": "magestat/magento2-floating-buy-button",
+    "name": "magestat/module-floating-buy-button",
     "description": "Floating Buy Button.",
     "type": "magento2-module",
     "version": "1.0.0",
-    "minimum-stability": "dev",
     "authors": [
         {
             "name": "Magestat",
