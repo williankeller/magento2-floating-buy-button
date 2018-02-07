@@ -12,41 +12,47 @@ Installation
 -------------
 **Using Composer**
 
-Run the following series of command (from root of your Magento2 Installation):
-```
-composer config repositories.magestat-module-floating-buy-button git git@github.com:magestat/magento2-floating-buy-button.git
 
-composer require magestat/module-floating-buy-button:dev-master
+Install all dependencies via [Composer](https://getcomposer.org) (from root of 
+your Magento2 Installation):
+```sh
+$ composer config repositories.magestat-module-floating-buy-button git git@github.com:magestat/magento2-floating-buy-button.git
+
+$ composer require magestat/module-floating-buy-button:dev-master
 ```
 
 **Using GIT Clone**
 
 Run the following series of command (from root of your Magento2 Installation):
-```
-mkdir -p app/code/Magestat && git clone git@github.com:magestat/magento2-floating-buy-button.git app/code/Magestat/FloatingBuyButton
+```sh
+$ mkdir -p app/code/Magestat && git clone git@github.com:magestat/magento2-floating-buy-button.git app/code/Magestat/FloatingBuyButton
 ```
 
 **Enabling module**
 
 After installation by either means, enable the extension by running following 
 commands (again from root of Magento2 installation):
-```
-php bin/magento module:enable Magestat_FloatingBuyButton --clear-static-content
-php bin/magento setup:upgrade
+```sh
+$ php bin/magento module:enable Magestat_FloatingBuyButton --clear-static-content
+$ php bin/magento setup:upgrade
 ```
 
 Go to *Stores* > *Configuration* > *Magestat* > *General*:
-Enable the module and choose the "Position to be Displayed"
+Enable module and choose the "Position to be Displayed" like: top, left, right 
+and bottom
+
+Clear the caches:
+```sh
+php bin/magento cache:clean
+```
 
 By default, this extension retrieves your current theme color patterns.
-
-Multi-language ready!
 
 
 Uninstall
 -------------
 
 You need to remove the module.
-```
-composer remove magestat/module-floating-buy-button
+```sh
+$ composer remove magestat/module-floating-buy-button
 ```
