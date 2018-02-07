@@ -12,18 +12,16 @@
 
 namespace Magestat\FloatingBuyButton\Block;
 
-class FloatingBuyButton extends \Magento\Catalog\Block\Product\AbstractProduct implements \Magento\Widget\Block\BlockInterface
-{
+use Magento\Catalog\Block\Product\AbstractProduct as AbstractProduct;
+use Magento\Widget\Block\BlockInterface as BlockInterface;
 
-    /**
-     * @var Product
-     */
-    protected $_product = null;
+class FloatingBuyButton extends AbstractProduct implements BlockInterface
+{
 
     /**
      * @var Data
      */
-    protected $_dataHelper = null;
+    protected $dataHelper = null;
 
     /**
      * @param \Magento\Catalog\Block\Product\Context $context
@@ -35,7 +33,7 @@ class FloatingBuyButton extends \Magento\Catalog\Block\Product\AbstractProduct i
         \Magestat\FloatingBuyButton\Helper\Data $helper,
         array $data = []
     ) {
-        $this->_dataHelper = $helper;
+        $this->dataHelper = $helper;
         parent::__construct($context, $data);
     }
 
@@ -52,7 +50,6 @@ class FloatingBuyButton extends \Magento\Catalog\Block\Product\AbstractProduct i
      */
     public function getPosition()
     {
-        return $this->_dataHelper->getPositions();
+        return $this->dataHelper->getPositions();
     }
-
 }

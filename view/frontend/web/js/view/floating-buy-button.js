@@ -55,7 +55,7 @@ define([
 
             // Detect click under the "Add to cart" button.
             $(self.floatButton).on('click', '.trigger-tocart', function (event) {
-                // Handler action to trigger by form submit. 
+                // Handler action to trigger by form submit.
                 self.toCartHandler(event);
             });
 
@@ -157,8 +157,7 @@ define([
                     // Calculate to distance.
                     if (topDistance < scrollTop) {
                         $(self.floatButton).addClass('active');
-                    }
-                    else {
+                    } else {
                         $(self.floatButton).removeClass('active');
                     }
                 }

@@ -74,5 +74,4 @@ class Positions implements \Magento\Framework\Option\ArrayInterface
 
         return isset($options[$optionId]) ? $options[$optionId] : null;
     }
-
 }

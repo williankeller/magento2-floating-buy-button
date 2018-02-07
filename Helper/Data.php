@@ -57,8 +57,9 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
     public function getConfigValue($path, $storeId = null)
     {
         return $this->scopeConfig->getValue(
-            $path, \Magento\Store\Model\ScopeInterface::SCOPE_STORE, $storeId
+            $path,
+            \Magento\Store\Model\ScopeInterface::SCOPE_STORE,
+            $storeId
         );
     }
-
 }
