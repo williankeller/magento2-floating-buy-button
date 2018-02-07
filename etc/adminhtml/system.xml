@@ -7,7 +7,7 @@
         <section id="magestat_floatingbuybutton" showInDefault="1">
             <tab>magestat</tab>
             <label>General</label>
-            <resource>Magestat\FloatingBuyButton::config</resource>
+            <resource>Magestat_FloatingBuyButton::config</resource>
             <group id="general" showInDefault="1">
                 <label>General</label>
                 <field id="enabled" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
