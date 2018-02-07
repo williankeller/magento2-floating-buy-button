@@ -16,16 +16,15 @@ Installation
 Install all dependencies via [Composer](https://getcomposer.org) (from root of 
 your Magento2 Installation):
 ```sh
-$ composer config repositories.magestat-module-floating-buy-button git git@github.com:magestat/magento2-floating-buy-button.git
-
-$ composer require magestat/module-floating-buy-button:dev-master
+composer config repositories.magestat-module-floating-buy-button git git@github.com:magestat/magento2-floating-buy-button.git
+composer require magestat/module-floating-buy-button:dev-master
 ```
 
 **Using GIT Clone**
 
 Run the following series of command (from root of your Magento2 Installation):
 ```sh
-$ mkdir -p app/code/Magestat && git clone git@github.com:magestat/magento2-floating-buy-button.git app/code/Magestat/FloatingBuyButton
+mkdir -p app/code/Magestat && git clone git@github.com:magestat/magento2-floating-buy-button.git app/code/Magestat/FloatingBuyButton
 ```
 
 **Enabling module**
@@ -33,8 +32,8 @@ $ mkdir -p app/code/Magestat && git clone git@github.com:magestat/magento2-float
 After installation by either means, enable the extension by running following 
 commands (again from root of Magento2 installation):
 ```sh
-$ php bin/magento module:enable Magestat_FloatingBuyButton --clear-static-content
-$ php bin/magento setup:upgrade
+php bin/magento module:enable Magestat_FloatingBuyButton --clear-static-content
+php bin/magento setup:upgrade
 ```
 
 Go to *Stores* > *Configuration* > *Magestat* > *General*:
@@ -54,5 +53,5 @@ Uninstall
 
 You need to remove the module.
 ```sh
-$ composer remove magestat/module-floating-buy-button
+composer remove magestat/module-floating-buy-button
 ```
