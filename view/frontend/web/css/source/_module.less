@@ -8,178 +8,257 @@
  * Please see LICENSE.txt for the full text of the OSL 3.0 license
  */
 
+@white-color: #ffffff;
 
 @container-full-size: 82px;
+@container-full-size-mobile: 150px;
+
 @container-side-size: 400px;
+@container-side-size-mobile: 89%;
+
 @container-border: #f4f4f4;
 @button-toggle-size: 40px;
 
-#floating-buy-button {
-    background: #fff;
-    box-sizing: border-box;
-    position: fixed;
-    height: @container-full-size;
-    width: 100%;
-    z-index: 99;
+//
+//  Common (Both desktop and mobile)
+//  _____________________________________________
 
-    -webkit-transition: all .5s ease;
-    -moz-transition: all .5s ease;
-    -o-transition: all .5s ease;
-    transition: all .5s ease;
+& when (@media-common = true) {
+    #floating-buy-button {
+        background: @white-color;
+        box-sizing: border-box;
+        position: fixed;
+        height: @container-full-size;
+        width: 100%;
+        z-index: 99;
 
-    .content-container {
-        margin-bottom: 20px;
-        margin-top: 20px;
-    }
+        -webkit-transition: all .5s ease;
+        -moz-transition: all .5s ease;
+        -o-transition: all .5s ease;
+        transition: all .5s ease;
 
-    .buy-button-toggle {
-        background-color: #252525;
-        color: #fff;
-        cursor: pointer;
-        font-size: 12px;
-        height: @button-toggle-size;
-        line-height: 40px;
-        position: absolute;
-        text-align: center;
-        text-transform: uppercase;
-        width: 100px;
-    }
+        .content-container {
+            margin-bottom: 20px;
+            margin-top: 20px;
+        }
 
-    .buy-details {
-        display: inline-block;
-        width: 80%;
+        .buy-button-toggle {
+            background-color: #252525;
+            color: @white-color;
+            cursor: pointer;
+            font-size: 12px;
+            height: @button-toggle-size;
+            line-height: 40px;
+            position: absolute;
+            text-align: center;
+            text-transform: uppercase;
+            width: 100px;
+        }
 
-        .product-name {
-            float: left;
-            max-width: 80%;
-            margin: 6px 20px 0 0;
-            padding: 0;
-            position: relative;
-            .page-title {
-                margin: 0;
-                overflow: hidden;
-                text-overflow: ellipsis;
-                white-space: nowrap;
+        .buy-details {
+            display: inline-block;
+            width: 80%;
+            .product-name {
+                float: left;
+                max-width: 80%;
+                margin: 6px 20px 0 0;
+                padding: 0;
+                position: relative;
+                .page-title {
+                    margin: 0;
+                    overflow-x: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    height: 35px;
+                }
+            }
+            .product-price {
+                float: left;
+                margin-top: 4px;
+                .price {
+                    font-size: 22px;
+                    font-weight: bold;
+                    margin: 0;
+                    padding: 0;
+                    position: relative;
+                }
             }
         }
 
-        .product-price {
-            float: left;
-            margin-top: 4px;
-            .price {
-                font-size: 22px;
-                font-weight: bold;
+        .buy-button {
+            display: inline-block;
+            float: right;
+            margin: 0;
+            outline: none;
+            text-align: right;
+            width: 20%;
+            .trigger-tocart {
                 margin: 0;
-                padding: 0;
+                padding: 10px 20px;
+            }
+        }
+
+        &.position-top,
+        &.position-bottom {
+            left: 0;
+            .buy-button-toggle {
+                left: 0;
+            }
+        }
+
+        &.position-top {
+            border-bottom: 1px solid @container-border;
+            top: -(@container-full-size + @button-toggle-size);
+            &.active {
+                top: 0;
+                &.hidden {
+                    top: -@container-full-size;
+                }
+            }
+            .buy-button-toggle {
+                bottom: -@button-toggle-size;
+            }
+        }
+        &.position-bottom {
+            border-top: 1px solid @container-border;
+            bottom: -(@container-full-size + @button-toggle-size);
+            &.active {
+                bottom: 0;
+                &.hidden {
+                    bottom: -@container-full-size;
+                }
+            }
+            .buy-button-toggle {
+                top: -@button-toggle-size;
+            }
+        }
+
+        &.position-left,
+        &.position-right {
+            border: 1px solid @container-border;
+            margin-top: -68px;
+            height: 135px;
+            top: 50%;
+            width: @container-side-size;
+            .content-container {
+                margin-bottom: 10px;
+                margin-top: 0;
+                padding: 5px 10px;
+            }
+            .buy-button-toggle {
+                top: 29px;
+            }
+            .buy-details,
+            .buy-button {
+                display: block;
+                margin-top: 8px;
+                text-align: center;
+                width: 100%;
+            }
+            .product-name,
+            .product-price {
+                float: none;
+                max-width: 100%;
+                margin: 0;
+            }
+        }
+
+        &.position-left {
+            border-right: 0;
+            right: -(@container-side-size + @button-toggle-size);
+            &.active {
+                right: 0;
+                &.hidden {
+                    right: -@container-side-size;
+                }
+            }
+            .buy-button-toggle {
+                left: -70px;
+                transform: rotate(-90deg);
+            }
+        }
+        &.position-right {
+            border-left: 0;
+            left: -(@container-side-size + @button-toggle-size);
+            &.active {
+                left: 0;
+                &.hidden {
+                    left: -@container-side-size;
+                }
+            }
+            .buy-button-toggle {
+                right: -70px;
+                transform: rotate(90deg);
+            }
+        }
+    }
+}
+
+//
+//  Mobile
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    #floating-buy-button {
+        height: @container-full-size-mobile;
+
+        &.position-top {
+            top: -(@container-full-size-mobile + @button-toggle-size);
+            &.active {
+                top: 0;
+                &.hidden {
+                    top: -@container-full-size-mobile;
+                }
+            }
+        }
+        &.position-bottom {
+            bottom: -(@container-full-size-mobile + @button-toggle-size);
+            &.active {
+                bottom: 0;
+                &.hidden {
+                    bottom: -@container-full-size-mobile;
+                }
+            }
+        }
+
+        &.position-left,
+        &.position-right {
+            width: @container-side-size-mobile;
+        }
+        &.position-left {
+            right: -(@container-side-size-mobile + @button-toggle-size);
+            &.active {
+                &.hidden {
+                    right: -@container-side-size-mobile;
+                }
+            }
+        }
+        &.position-right {
+            left: -(@container-side-size-mobile + @button-toggle-size);
+            &.active {
+                &.hidden {
+                    left: -@container-side-size-mobile;
+                }
+            }
+        }
+
+        .buy-details {
+            width: 100%;
+            .product-name,
+            .product-price {
+                float: none;
+                max-width: 100%;
                 position: relative;
             }
         }
-    }
 
-    .buy-button {
-        display: inline-block;
-        float: right;
-        margin: 0;
-        outline: none;
-        text-align: right;
-        width: 20%;
-        .trigger-tocart {
-            margin: 0;
-            padding: 10px 20px;
-        }
-    }
-
-    &.position-top,
-    &.position-bottom {
-        left: 0;
-        .buy-button-toggle {
-            left: 0;
-        }
-    }
-
-    &.position-top {
-        border-bottom: 1px solid @container-border;
-        top: -(@container-full-size + @button-toggle-size);
-        &.active {
-            top: 0;
-            &.hidden {
-                top: -@container-full-size;
-            }
-        }
-        .buy-button-toggle {
-            bottom: -@button-toggle-size;
-        }
-    }
-    &.position-bottom {
-        border-top: 1px solid @container-border;
-        bottom: -(@container-full-size + @button-toggle-size);
-        &.active {
-            bottom: 0;
-            &.hidden {
-                bottom: -@container-full-size;
-            }
-        }
-        .buy-button-toggle {
-            top: -@button-toggle-size;
-        }
-    }
-
-    &.position-left,
-    &.position-right {
-        border: 1px solid @container-border;
-        margin-top: -68px;
-        height: 135px;
-        top: 50%;
-        width: @container-side-size;
-        .content-container {
-            margin-bottom: 10px;
-            margin-top: 0;
-            padding: 5px 10px;
-        }
-        .buy-button-toggle {
-            top: 29px;
-        }
-        .buy-details,
         .buy-button {
             display: block;
-            margin-top: 8px;
-            text-align: center;
-            width: 100%;
-        }
-        .product-name,
-        .product-price {
             float: none;
-            max-width: 100%;
-            margin: 0;
-        }
-    }
-
-    &.position-left {
-        border-right: 0;
-        right: -(@container-side-size + @button-toggle-size);
-        &.active {
-            right: 0;
-            &.hidden {
-                right: -@container-side-size;
+            width: 100%;
+            .trigger-tocart {
+                width: 100%;
             }
-        }
-        .buy-button-toggle {
-            left: -70px;
-            transform: rotate(-90deg);
-        }
-    }
-    &.position-right {
-        border-left: 0;
-        left: -(@container-side-size + @button-toggle-size);
-        &.active {
-            left: 0;
-            &.hidden {
-                left: -@container-side-size;
-            }
-        }
-        .buy-button-toggle {
-            right: -70px;
-            transform: rotate(90deg);
         }
     }
 }
