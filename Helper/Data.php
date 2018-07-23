@@ -14,8 +14,19 @@ namespace Magestat\FloatingBuyButton\Helper;
 
 class Data extends \Magento\Framework\App\Helper\AbstractHelper
 {
-
-    const XML_PATH_POSITION = 'magestat_floatingbuybutton/button/positions';
+    /**
+     * Check if module is active.
+     *
+     * @param null $storeId
+     * @return bool
+     */
+    public function isActive($storeId = null)
+    {
+        return (bool) $this->getConfigValue(
+            'magestat_floatingbuybutton/module/enabled',
+            $storeId
+        );
+    }
 
     /**
      * Return Floating Buy Button position.
@@ -25,7 +36,10 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
      */
     public function getPositions($storeId = null)
     {
-        return $this->getConfigValue(self::XML_PATH_POSITION, $storeId);
+        return $this->getConfigValue(
+            'magestat_floatingbuybutton/options/positions',
+            $storeId
+        );
     }
 
     /**

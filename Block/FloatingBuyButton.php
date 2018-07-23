@@ -14,23 +14,24 @@ namespace Magestat\FloatingBuyButton\Block;
 
 use Magento\Catalog\Block\Product\AbstractProduct as AbstractProduct;
 use Magento\Widget\Block\BlockInterface as BlockInterface;
+use Magento\Catalog\Block\Product\Context;
+use Magestat\FloatingBuyButton\Helper\Data as HelperData;
 
 class FloatingBuyButton extends AbstractProduct implements BlockInterface
 {
-
     /**
-     * @var Data
+     * @var \Magestat\FloatingBuyButton\Helper\Data
      */
     protected $dataHelper = null;
 
     /**
-     * @param \Magento\Catalog\Block\Product\Context $context
-     * @param \Magestat\FloatingBuyButton\Helper\Data $helper
+     * @param Context $context
+     * @param HelperData $helper
      * @param array $data
      */
     public function __construct(
-        \Magento\Catalog\Block\Product\Context $context,
-        \Magestat\FloatingBuyButton\Helper\Data $helper,
+        Context $context,
+        HelperData $helper,
         array $data = []
     ) {
         $this->dataHelper = $helper;
@@ -43,6 +44,14 @@ class FloatingBuyButton extends AbstractProduct implements BlockInterface
     public function getCurrency()
     {
         return $this->_storeManager->getStore()->getCurrentCurrency()->getCode();
+    }
+
+    /**
+     * @return string
+     */
+    public function getIsEnabled()
+    {
+        return $this->dataHelper->isActive();
     }
 
     /**
