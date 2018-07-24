@@ -16,7 +16,7 @@ purchase.
 
 Run the following command in Magento 2 root folder:
 ```sh
-composer require magestat/magento2-floating-buy-button
+composer require magestat/module-floating-buy-button
 ```
 
 ### Using GIT clone
