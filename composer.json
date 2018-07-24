@@ -20,7 +20,7 @@
     ],
     "support": {
         "email": "support@magestat.com",
-        "issues": "https://github.com/magestat/magento2-split-order/issues/"
+        "issues": "https://github.com/magestat/magento2-floating-buy-button/issues/"
     },
     "require": {
         "php": "~5.5.0|~5.6.0|~7.0.0|~7.1.0",
