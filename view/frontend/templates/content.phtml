@@ -2,7 +2,7 @@
 
 /**
  * Floating Buy Button.
- * Copyright (C) 2018 Magestat (http://magestat.com)
+ * Copyright (C) 2018 Magestat
  *
  * This file included in Magestat/FloatingBuyButton is licensed under OSL 3.0
  *
@@ -11,14 +11,15 @@
  */
 
 /**
- * @var $block \Magestat\FloatingBuyButton\Block\FloatingBuyButton
+ * @var \Magestat\FloatingBuyButton\Block\FloatingBuyButton $block
  */
+
+$_product = $block->getProduct();
 ?>
-<?php $_product = $block->getProduct(); ?>
-<?php if ($block->getIsEnabled() && $_product->isSaleable()): ?>
-<div id="floating-buy-button" class="<?= $block->getPosition() ?>" data-bind="scope:'floating-buy-button'">
+<?php if ($block->getIsEnabled() && $_product->isSaleable()) : ?>
+<div id="floating-buy-button" class="<?= $block->escapeHtml($block->getPosition()) ?>" data-bind="scope:'floating-buy-button'">
     <div class="buy-button-toggle">
-        <span><?= /* @escapeNotVerified */ __('Add to Cart') ?></span>
+        <span><?= $block->escapeHtml(__('Add to Cart')) ?></span>
     </div>
     <div class="content-container page-main">
         <div class="buy-details">
@@ -29,17 +30,17 @@
             </div>
             <div class="product-price">
                 <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-                    <div class="price-value"><?= $block->getProductPrice($_product) ?></div>
-                    <meta itemprop="priceCurrency" content="<?= $block->getCurrency() ?>">
+                    <div class="price-value"><?= $block->escapeHtml($block->getProductPrice($_product)) ?></div>
+                    <meta itemprop="priceCurrency" content="<?= $block->escapeHtmlAttr($block->getCurrency()) ?>">
                 </div>
             </div>
         </div>
         <div class="buy-button">
             <div class="actions">
                 <button type="button"
-                        title="<?= /* @escapeNotVerified */ __('Add to Cart') ?>"
+                        title="<?= $block->escapeHtml(__('Add to Cart')) ?>"
                         class="action primary trigger-tocart">
-                    <span><?= /* @escapeNotVerified */ __('Add to Cart') ?></span>
+                    <span><?= $block->escapeHtml(__('Add to Cart')) ?></span>
                 </button>
             </div>
         </div>
