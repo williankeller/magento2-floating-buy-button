@@ -2,7 +2,7 @@
 
 /**
  * Floating Buy Button.
- * Copyright (C) 2018 Magestat (http://magestat.com)
+ * Copyright (C) 2018 Magestat
  *
  * This file included in Magestat/FloatingBuyButton is licensed under OSL 3.0
  *
@@ -22,7 +22,7 @@ class FloatingBuyButton extends AbstractProduct implements BlockInterface
     /**
      * @var \Magestat\FloatingBuyButton\Helper\Data
      */
-    protected $dataHelper = null;
+    private $dataHelper = null;
 
     /**
      * @param Context $context

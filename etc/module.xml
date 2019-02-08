@@ -2,7 +2,7 @@
 <!--
 /**
  * Floating Buy Button.
- * Copyright (C) 2018 Magestat (http://magestat.com)
+ * Copyright (C) 2018 Magestat
  *
  * This file included in Magestat/FloatingBuyButton is licensed under OSL 3.0
  *
@@ -11,5 +11,5 @@
  */
 -->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
-    <module name="Magestat_FloatingBuyButton" setup_version="1.0.4"/>
+    <module name="Magestat_FloatingBuyButton" setup_version="1.0.5"/>
 </config>

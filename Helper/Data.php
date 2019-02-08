@@ -2,7 +2,7 @@
 
 /**
  * Floating Buy Button.
- * Copyright (C) 2018 Magestat (http://magestat.com)
+ * Copyright (C) 2018 Magestat
  *
  * This file included in Magestat/FloatingBuyButton is licensed under OSL 3.0
  *
@@ -12,6 +12,9 @@
 
 namespace Magestat\FloatingBuyButton\Helper;
 
+/**
+ * @package Magestat\FloatingBuyButton\Helper
+ */
 class Data extends \Magento\Framework\App\Helper\AbstractHelper
 {
     /**
