@@ -8,7 +8,7 @@ product name, price and of course, the buy button.
 Get your customer attention the most important action in your online store, the 
 purchase.
 
-[![Packagist](https://img.shields.io/packagist/v/magestat/module-floating-buy-button.svg)](https://packagist.org/packages/magestat/module-floating-buy-button)
+[![Build Status](https://travis-ci.org/magestat/magento2-floating-buy-button.svg?branch=develop)](https://travis-ci.org/magestat/magento2-floating-buy-button) [![Packagist](https://img.shields.io/packagist/v/magestat/module-floating-buy-button.svg)](https://packagist.org/packages/magestat/module-floating-buy-button)
 
 ## 1. Installation
 
