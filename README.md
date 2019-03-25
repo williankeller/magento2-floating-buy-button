@@ -1,5 +1,4 @@
-Floating Buy Button for Magento 2
-=====================
+# Floating Buy Button for Magento 2
 
 A simple way that allows the integration of a Floating Buy Button in your store;
 No matter how much content it has, like, long product description or a lot of 
