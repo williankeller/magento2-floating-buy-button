@@ -13,7 +13,7 @@ Run the following command in Magento 2 root folder:
 composer require magestat/module-floating-buy-button
 ```
 
-### Using GIT clone _(developement)_
+### Using GIT clone
 
 Run the following command in Magento 2 root folder:
 ```sh
