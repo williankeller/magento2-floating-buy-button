@@ -1,13 +1,13 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
-### [1.0.5](https://github.com/magestat/magento2-floating-buy-button/releases/tag/1.0.5) - 2019-02-08
+### [1.0.5](https://github.com/magestat/magento2-floating-buy-button/releases/tag/1.0.5) - -02-08/2019
 #### Added
 - Compatibility with PHP 7.2
 - Travis to static code analysis.
 
 
-### [1.0.4](https://github.com/magestat/magento2-floating-buy-button/releases/tag/1.0.4) - 2018-07-23
+### [1.0.4](https://github.com/magestat/magento2-floating-buy-button/releases/tag/1.0.4) - 07/23/2018
 #### Added
 - CMS module settings (Enable/Disable)
 
@@ -18,17 +18,17 @@ All notable changes to this project will be documented in this file.
 - Improved module architecture.
 
 
-### [1.0.3](https://github.com/magestat/magento2-floating-buy-button/releases/tag/1.0.3) - 2018-02-13
+### [1.0.3](https://github.com/magestat/magento2-floating-buy-button/releases/tag/1.0.3) - 02/13/2018
 #### Fixed
 - Fix style to bottom position;
 
 
-### [1.0.2](https://github.com/magestat/magento2-floating-buy-button/releases/tag/1.0.2) - 2018-02-13
+### [1.0.2](https://github.com/magestat/magento2-floating-buy-button/releases/tag/1.0.2) - 02/13/2018
 #### Fixed
 - Fix extension settings
 
 
-### [1.0.1](https://github.com/magestat/magento2-floating-buy-button/releases/tag/1.0.1) - 2018-02-13
+### [1.0.1](https://github.com/magestat/magento2-floating-buy-button/releases/tag/1.0.1) - 02/13/2018
 #### Added
 - Improve extension
 
