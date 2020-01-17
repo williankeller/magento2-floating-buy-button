@@ -1,26 +1,21 @@
 <?php
 
-/**
- * Floating Buy Button.
- * Copyright (C) 2018 Magestat
- *
- * This file included in Magestat/FloatingBuyButton is licensed under OSL 3.0
- *
- * http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
- * Please see LICENSE.txt for the full text of the OSL 3.0 license
- */
-
 namespace Magestat\FloatingBuyButton\Block;
 
 use Magento\Catalog\Block\Product\AbstractProduct as AbstractProduct;
 use Magento\Widget\Block\BlockInterface as BlockInterface;
 use Magento\Catalog\Block\Product\Context;
 use Magestat\FloatingBuyButton\Helper\Data as HelperData;
+use Magento\Framework\Exception\NoSuchEntityException;
 
+/**
+ * Class FloatingBuyButton
+ * Implementing current Widget block
+ */
 class FloatingBuyButton extends AbstractProduct implements BlockInterface
 {
     /**
-     * @var \Magestat\FloatingBuyButton\Helper\Data
+     * @var HelperData
      */
     private $dataHelper = null;
 
@@ -39,7 +34,8 @@ class FloatingBuyButton extends AbstractProduct implements BlockInterface
     }
 
     /**
-     * @return string
+     * @return mixed
+     * @throws NoSuchEntityException
      */
     public function getCurrency()
     {
