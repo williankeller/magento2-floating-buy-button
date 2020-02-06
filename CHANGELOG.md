@@ -1,7 +1,12 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
-### [1.0.5](https://github.com/magestat/magento2-floating-buy-button/releases/tag/1.0.5) - -02-08/2019
+### [1.0.6](https://github.com/magestat/magento2-floating-buy-button/releases/tag/1.0.6) - 02/06/2020
+#### Added
+- Compatibility with Magento 2.3.4
+
+
+### [1.0.5](https://github.com/magestat/magento2-floating-buy-button/releases/tag/1.0.5) - 08/02/2019
 #### Added
 - Compatibility with PHP 7.2
 - Travis to static code analysis.
