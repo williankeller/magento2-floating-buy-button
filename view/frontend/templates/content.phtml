@@ -1,11 +1,12 @@
 <?php
 /**
  * @var \Magestat\FloatingBuyButton\Block\FloatingBuyButton $block
+ * @codingStandardsIgnoreFile
  */
 
 $_product = $block->getProduct();
 ?>
-<?php if ($block->getIsEnabled() && $_product->isSaleable()) : ?>
+<?php if ($block->getIsEnabled() && $_product->isSaleable()): ?>
 <div id="floating-buy-button" class="<?= $block->escapeHtml($block->getPosition()) ?>" data-bind="scope:'floating-buy-button'">
     <div class="buy-button-toggle">
         <span><?= $block->escapeHtml(__('Add to Cart')) ?></span>
