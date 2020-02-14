@@ -10,7 +10,7 @@
         "magento 2 purchase"
     ],
     "type": "magento2-module",
-    "version": "1.0.6",
+    "version": "1.0.7",
     "support": {
         "issues": "https://github.com/magestat/magento2-floating-buy-button/issues/"
     },

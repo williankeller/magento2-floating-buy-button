@@ -20,7 +20,7 @@ $_product = $block->getProduct();
             </div>
             <div class="product-price">
                 <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-                    <div class="price-value"><?= $block->escapeHtml($block->getProductPrice($_product)) ?></div>
+                    <div class="price-value"><?= /* @noEscape */ $block->getProductPrice($_product) ?></div>
                     <meta itemprop="priceCurrency" content="<?= $block->escapeHtmlAttr($block->getCurrency()) ?>">
                 </div>
             </div>
