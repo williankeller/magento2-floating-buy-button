@@ -1,10 +1,17 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+### [1.0.8](https://github.com/magestat/magento2-floating-buy-button/releases/tag/1.0.8) - 02/17/2020
+#### Fixed
+- Added ACL for this module
+
+### [1.0.7](https://github.com/magestat/magento2-floating-buy-button/releases/tag/1.0.7) - 02/14/2020
+#### Fixed
+- Fixed issue with Buy button where it was being rendered as plain text instead of HTML
+
 ### [1.0.6](https://github.com/magestat/magento2-floating-buy-button/releases/tag/1.0.6) - 02/06/2020
 #### Added
 - Compatibility with Magento 2.3.4
-
 
 ### [1.0.5](https://github.com/magestat/magento2-floating-buy-button/releases/tag/1.0.5) - 08/02/2019
 #### Added
